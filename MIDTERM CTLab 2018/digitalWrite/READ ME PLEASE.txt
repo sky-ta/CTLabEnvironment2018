@@ -1,0 +1,26 @@
+"Birby": Midterm Project
+Sky Ta
+Core Lab Environment - Spring 2018
+
+Reference: This project is made happened thanks to the help of
+1. DigitalWrite code for Arduino and HTML: Prof. Courtney Snavely
+3. Tuitors: Prof. Courtney Snavely and Rian Ishikawa
+2. Navigation bar in HTML and CSS: https://www.w3schools.com/tags/ref_language_codes.asp
+2. About HTML web's language: https://www.w3schools.com/tags/ref_language_codes.asp
+4. Multiple pages in html: https://www.youtube.com/watch?v=IDy1jddwBqQ&list=WL&index=3
+5. Auto reply in chat: Prof. Courtney Snavely (using node to load HTML onto Chrome)
+6. Chatbot scrolling: https://www.youtube.com/watch?v=Hrz3DzZDIt0
+7. Chatbot auto Reply: Prof. Courtney Snavely
+8. Adding icon to address bar: https://stackoverflow.com/questions/626371/how-can-i-add-a-picture-in-address-bar-of-the-browser-when-my-page-is-browsed
+9. General tags other: https://www.w3schools.com/tags/default.asp
+10. Organizing documents:  https://learn-the-web.algonquindesign.ca/topics/navigation/
+11. Memes: Most meme are gathered and "donnated" by @13adwolf, others are searched on Google Images with the keywords "bird meme", "cockatiel meme", "bird gifs". 
+
+Desciption of project's process is listed in Google Slide's desciption.
+
+Color used:
+1. Red: 
+2. Yellow: 
+3. Green: #d9ff82
+
+  

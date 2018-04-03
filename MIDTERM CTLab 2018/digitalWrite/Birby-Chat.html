@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!-- Canvas animation based on https://www.kirupa.com/snippets/examples/simple_canvas_animation.htm -->
+<!-- //https://www.youtube.com/watch?v=LOWjWRy_Kks
+ -->
+
+  <!-- Please read READ ME PLEASE.txt for references and other information -->
+
+
+<html lang="en">
+<!-- HEAD -->    
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" type="image/png" href="./assets/birby-icon.png"/>
+        <title>Birby Chat Room</title> 
+
+        <link rel="stylesheet" href="./CSS/style.css">
+        <!-- 2 following lines includes the library for navigation bar -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+
+
+
+<!-- BODY -->
+<body>
+    <!-- <div id="container"> -->
+<!-- NAVIGATION BAR: -->
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+
+            <div class="logo">
+
+              B I R B Y
+            </div>
+
+            <div class="menu">        
+            <ul>
+                <li><a href="Birby-Home.html">Home</a></li>
+                <li><a href="Birby-Forums.html">Forums</a></li>
+                <li><a href="Birby-Chat.html"><strong>Chat</strong></a></li>
+                <li><a href="Birby-Store.html">Store</a></li>
+            </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <script type="text/javascript">
+        // Menu-toggle button
+        $(document).ready(function() {
+            $(".menu-icon").on("click", function() {
+                  $("nav ul").toggleClass("showing");
+            });
+      });
+    </script>
+
+
+<!-- CONTENTS: -->
+    <div class="content">         
+        <figure>
+            <img src="./assets/chat-example.png" alt="vision of chat page" width=110%>
+            <figcaption><strong>Example of Chat Page</strong></figcaption>
+        </figure>
+    </div>
+
+
+
+
+    <!-- WEIRD STUFF -->
+
+    <textarea id = "commentBox"></textarea>
+        <div id="Space">
+           <!--  <div id="planetBody" class="planetBody"></div>
+            <div id="planetRing"></div>
+            <div id="planetCover" class="planetBody"></div>
+
+            <div class="star" id="star1"></div>
+            <div class="star" id="star2"></div>
+            <div class="star" id="star3"></div> -->
+        </div>
+  <!--       <button id="myButton">Click Me!</button> -->
+        <input id="numStarsInput" placeholder="Birb at them" />
+        <button id="sendButton">Birb !</button>
+
+
+
+
+       <script src = "/socket.io/socket.io.js"></script>
+       <script> 
+            var socket = io.connect('http://localhost:8080');  
+            socket.on('initialMessage', function (data){
+            //code for text parsing 
+            //get input value 
+            //store in an array 
+            //split that value 
+            var input = document.getElementById("input").value;
+
+        // 2. get its value property
+            var  inputValue = input.b; //what the user types 
+
+            console.log(inputValue); 
+            var textSplit = inputValue.split(" "); 
+        // var r = Math.random(0, 1); 
+        // var outputField = document.getElementById("commentBox"); 
+
+            for(var i = 0; i<textSplit.length; i++){
+                if(textSplit[i]=="chirp"){
+                 outputField.value = "hi bird"; 
+                    socket.emit('1'); 
+                    console.log('1');
+                    
+                    mySerialPort.write("1");
+
+                }else{
+                    socket.emit('0'); 
+                    console.log('0');
+            
+                    mySerialPort.write("0");
+
+            // if(r<.5){
+            //  console.log("whatever"); 
+            // }else{
+            //  console.log("not whatever"); 
+            // }
+                }
+
+            }
+    
+    // outputField.value = textSplit[0]; 
+    // function onAddComments(){
+
+    // }
+
+
+     //         window.onmousedown = function(){
+        //                  socket.emit('1');
+        //                  console.log('1');
+        //  }
+        //          // this event fires when we release our mouse
+        //  window.onmouseup = function(){
+        //              socket.emit('0');
+        //              console.log('0');
+
+        //  }
+
+         });
+// End of weird.
+
+
+    </script>
+
+<!-- ADRESS BAR: -->
+    <div class="address-bar">
+        <address>
+        <hr>
+        <dd>Created by <a href="mailto:sky.anh.ta@gmail.com">Sky Ta</a>.<br></dd>
+        <dd><a href="https://www.instagram.com/sky.ta/?hl=en">@sky.ta</a><br></dd>
+        <dd>Queens, New York<br></dd>
+        <dd>USA</dd>
+        </address> 
+    </div>
+
+
+</body>
+</html>

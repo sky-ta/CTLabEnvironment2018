@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- Canvas animation based on https://www.kirupa.com/snippets/examples/simple_canvas_animation.htm -->
+<!-- //https://www.youtube.com/watch?v=LOWjWRy_Kks
+ -->
+
+
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" type="image.png" href="./assets/icon2.png"/>
+<title>Birby</title>
+
+	<style>
+	canvas {
+		border: 3px #CCC solid;
+	}
+	</style>
+
+</head>
+
+<body>
+	<div id="container">
+	</div>
+
+
+
+	<!-- here -->
+<textarea id = "commentBox"></textarea>
+    	<div id="Space">
+           <!--  <div id="planetBody" class="planetBody"></div>
+            <div id="planetRing"></div>
+            <div id="planetCover" class="planetBody"></div>
+
+            <div class="star" id="star1"></div>
+            <div class="star" id="star2"></div>
+            <div class="star" id="star3"></div> -->
+        </div>
+  <!--       <button id="myButton">Click Me!</button> -->
+        <input id="numStarsInput" placeholder="Birb at them" />
+		<button id="addStarsBtn">Birb !</button>
+
+
+
+
+
+	<!-- <input id = "input">  -->
+	<!-- <script src="sketch.js"></script> -->
+<!-- <script src="server.js"></script>  -->
+
+<!-- ???? -->
+	<script src = "/socket.io/socket.io.js"></script>
+	<script> 
+		 var socket = io.connect('http://localhost:8080');
+		// var express = require('express');
+		// var app = express();
+		// var server = require('http').createServer(app);
+		// var io = require('socket.io')(server);
+		// var port = process.env.PORT || 8080;
+		// var SerialPort = require('serialport');
+// 		var serialVal;
+
+// 		var mySerialPort = new SerialPort('COM10', { //paste your port path here
+//   		parser: new SerialPort.parsers.Readline('\n')
+// });
+	 	socket.on('initialMessage', function (data){
+	 		//code for text parsing 
+	 		//get input value 
+	 		//store in an array 
+	 		//split that value 
+	 		var input = document.getElementById("input").value;
+
+    	// 2. get its value property
+    		//var value;
+
+
+
+
+
+    		var  inputValue = input.b; //what the user types 
+
+    		console.log(inputValue); 
+   			var textSplit = inputValue.split(" "); 
+   		// var r = Math.random(0, 1); 
+    	// var outputField = document.getElementById("commentBox"); 
+
+    		for(var i = 0; i<textSplit.length; i++){
+    			if(textSplit[i]=="chirp"){
+    			 outputField.value = "hi bird"; 
+    				socket.emit('1'); 
+    				console.log('1');
+    				
+    				mySerialPort.write("1");
+
+    			// console.log("hi bird"); 
+    			}else{
+    				socket.emit('0'); 
+    				console.log('0');
+	 		
+	 				mySerialPort.write("0");
+
+    		// if(r<.5){
+    		// 	console.log("whatever"); 
+    		// }else{
+    		// 	console.log("not whatever"); 
+    		// }
+    			}
+
+    		}
+    
+    // outputField.value = textSplit[0]; 
+    // function onAddComments(){
+
+    // }
+	 		window.onmousedown = function(){
+							socket.emit('1');
+							console.log('1');
+			}
+					// this event fires when we release our mouse
+			window.onmouseup = function(){
+						socket.emit('0');
+						console.log('0');
+
+			}
+
+		});
+
+    </script>
+</body>
+</html>

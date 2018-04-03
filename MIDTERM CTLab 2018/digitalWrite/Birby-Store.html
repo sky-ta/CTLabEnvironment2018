@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- Canvas animation based on https://www.kirupa.com/snippets/examples/simple_canvas_animation.htm -->
+<!-- //https://www.youtube.com/watch?v=LOWjWRy_Kks
+ -->
+
+<!-- Please read READ ME PLEASE.txt for references and other information -->
+
+
+<html lang="en">
+<!-- HEAD -->    
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" type="image/png" href="./assets/birby-icon.png"/>
+        <title>Birby Chat Room</title> 
+
+        <link rel="stylesheet" href="./CSS/style.css">
+        <!-- 2 following lines includes the library for navigation bar -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+
+
+
+<!-- BODY -->
+<body>
+    <!-- <div id="container"> -->
+       
+    <header>
+
+        <nav>
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+
+            <div class="logo">
+
+              B I R B Y
+            </div>
+
+            <div class="menu">        
+            <ul>
+                <li><a href="Birby-Home.html">Home</a></li>
+                <li><a href="Birby-Forums.html">Forums</a></li>
+                <li><a href="Birby-Chat.html">Chat</a></li>
+                <li><a href="Birby-Store.html"><strong>Store<strong></a></li>
+            </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <script type="text/javascript">
+        // Menu-toggle button
+        $(document).ready(function() {
+            $(".menu-icon").on("click", function() {
+                  $("nav ul").toggleClass("showing");
+            });
+      });
+    </script>
+
+    <div class="content"> 
+
+        <!-- POST ON HOME PAGE -->
+        
+        <figure>
+            <img src="./assets/storepage-example.png" alt="vision of store page" width=110%>
+            <figcaption><strong>Example of Store Page</strong></figcaption>
+        </figure>
+
+        <div class="addCart"> 
+            <button id = "myButton">Add to Cart</button>
+        </div>
+
+    </div>
+        
+    
+
+
+<!-- ADRESS BAR: -->
+    <div class="address-bar">
+        <address>
+        <hr>
+        <dd>Created by <a href="mailto:sky.anh.ta@gmail.com">Sky Ta</a>.<br></dd>
+        <dd><a href="https://www.instagram.com/sky.ta/?hl=en">@sky.ta</a><br></dd>
+        <dd>Queens, New York<br></dd>
+        <dd>USA</dd>
+        </address> 
+    </div>
+
+</body>
+</html>
