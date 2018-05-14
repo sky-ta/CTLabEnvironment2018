@@ -12,7 +12,7 @@ body {
  
 header {
       width: 100%;
-      height: 100vh;
+      height: 10vh;
       /*background: url(../assets/black.jpg) no-repeat 1% 50%;*/
       background-size: cover;
 }
